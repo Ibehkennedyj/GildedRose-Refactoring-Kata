@@ -21,7 +21,7 @@ public class BackstagePasses extends ItemWrapper implements QualityChangeRateFlu
 
     @Override
     public RateMap getChangeRateMap() {
-        return new RateMap(1, new HashMap<Integer, Integer>(){{
+        return new RateMap(1, new HashMap<Integer, Integer>() {{
             put(10, 2);
             put(5, 3);
         }});
