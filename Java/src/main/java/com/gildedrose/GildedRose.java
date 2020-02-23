@@ -1,10 +1,18 @@
 package com.gildedrose;
 
+import com.gildedrose.decorators.ItemDecorator;
+
 class GildedRose {
+
     Item[] items;
+    private ItemDecorator[] itemDecorators;
 
     public GildedRose(Item[] items) {
         this.items = items;
+    }
+
+    public GildedRose(ItemDecorator[] items) {
+        this.itemDecorators = items;
     }
 
     public void updateQuality() {
@@ -59,4 +67,11 @@ class GildedRose {
             }
         }
     }
+
+    public void newUpdateQuality() {
+        for (ItemDecorator decorator : itemDecorators) {
+            decorator.updateQuality();
+        }
+    }
+
 }
