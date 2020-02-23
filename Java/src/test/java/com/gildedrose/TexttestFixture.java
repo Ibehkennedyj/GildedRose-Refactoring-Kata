@@ -1,10 +1,18 @@
 package com.gildedrose;
 
-public class TexttestFixture {
-    public static void main(String[] args) {
-        System.out.println("OMGHAI!");
+import com.gildedrose.decorators.ItemDecorator;
+import com.gildedrose.itemtypes.AgedBrie;
+import com.gildedrose.itemtypes.BackstagePasses;
+import com.gildedrose.itemtypes.LegendaryItem;
+import com.gildedrose.itemtypes.RegularItem;
 
-        Item[] items = new Item[] {
+public class TexttestFixture {
+
+    public static String existingRun(int days) {
+        StringBuilder builder = new StringBuilder();
+        builder.append("OMGHAI!").append("\n");
+
+        Item[] items = new Item[]{
                 new Item("+5 Dexterity Vest", 10, 20), //
                 new Item("Aged Brie", 2, 0), //
                 new Item("Elixir of the Mongoose", 5, 7), //
@@ -18,20 +26,17 @@ public class TexttestFixture {
 
         GildedRose app = new GildedRose(items);
 
-        int days = 2;
-        if (args.length > 0) {
-            days = Integer.parseInt(args[0]) + 1;
-        }
-
         for (int i = 0; i < days; i++) {
-            System.out.println("-------- day " + i + " --------");
-            System.out.println("name, sellIn, quality");
+            builder.append("-------- day ").append(i).append(" --------").append("\n");
+            builder.append("name, sellIn, quality").append("\n");
             for (Item item : items) {
-                System.out.println(item);
+                builder.append(item).append("\n");
             }
-            System.out.println();
+            builder.append("\n");
             app.updateQuality();
         }
     }
 
+        return builder.toString();
+    }
 }
