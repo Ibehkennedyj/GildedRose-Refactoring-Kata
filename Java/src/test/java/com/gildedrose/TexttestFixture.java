@@ -1,7 +1,15 @@
 package com.gildedrose;
 
+import org.junit.jupiter.api.Test;
+
+import java.io.IOException;
+
+import static java.nio.file.Files.readAllBytes;
+import static java.nio.file.Paths.get;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class TexttestFixture {
-    public static void main(String... args) {
+    public static String main(String... args) {
         StringBuilder builder = new StringBuilder();
         builder.append("OMGHAI!").append("\n");
 
@@ -34,7 +42,15 @@ public class TexttestFixture {
             app.updateQuality();
         }
 
-        System.out.println(builder.toString());
+        return builder.toString();
+    }
+
+
+    @Test
+    void results_must_be_same_as_stored_first_run() throws IOException {
+        String resultBeforeRefactoring = new String(readAllBytes(get("src/test/java/com/gildedrose/result_before_refactoring")))
+                .replaceAll("\r", "");
+        assertEquals(resultBeforeRefactoring, main());
     }
 
 }
