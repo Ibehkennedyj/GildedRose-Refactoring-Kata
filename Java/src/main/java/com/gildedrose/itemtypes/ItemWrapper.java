@@ -4,7 +4,7 @@ import com.gildedrose.Item;
 
 public class ItemWrapper {
 
-    private Item item;
+    private final Item item;
 
     public ItemWrapper(Item item) {
         this.item = item;
