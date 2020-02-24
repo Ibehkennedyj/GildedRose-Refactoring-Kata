@@ -12,7 +12,7 @@ public class ConjuredItem extends ItemWrapper implements QualityDecreases, Quali
 
     @Override
     public int getDecreaseRate() {
-        return 2;
+        return 2 ;
     }
 
 }
