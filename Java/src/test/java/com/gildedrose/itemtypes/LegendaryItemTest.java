@@ -1,6 +1,7 @@
 package com.gildedrose.itemtypes;
 
 import com.gildedrose.Item;
+import com.gildedrose.decorators.ItemDecorator;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
@@ -10,7 +11,7 @@ class LegendaryItemTest {
 
     @Test
     void properties_of_legendary_item_stays_untouched() {
-        ItemWrapper item = new LegendaryItem(new Item("Sulfuras, Hand of Ragnaros", 0, 80));
+        ItemDecorator item = new LegendaryItem(new Item("Sulfuras, Hand of Ragnaros", 0, 80));
 
         item.updateQuality();
 

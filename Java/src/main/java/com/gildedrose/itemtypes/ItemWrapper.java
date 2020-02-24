@@ -1,9 +1,8 @@
 package com.gildedrose.itemtypes;
 
 import com.gildedrose.Item;
-import com.gildedrose.decorators.ItemDecorator;
 
-public abstract class ItemWrapper implements ItemDecorator {
+public class ItemWrapper {
 
     private Item item;
 
@@ -11,7 +10,6 @@ public abstract class ItemWrapper implements ItemDecorator {
         this.item = item;
     }
 
-    @Override
     public Item getItem() {
         return item;
     }

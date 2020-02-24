@@ -1,17 +1,17 @@
 package com.gildedrose;
 
-import com.gildedrose.itemtypes.ItemWrapper;
+import com.gildedrose.decorators.ItemDecorator;
 
 class GildedRose {
 
-    private ItemWrapper[] wrappedItems;
+    private ItemDecorator[] wrappedItems;
 
-    public GildedRose(ItemWrapper[] wrappedItems) {
+    public GildedRose(ItemDecorator[] wrappedItems) {
         this.wrappedItems = wrappedItems;
     }
 
     public void updateQuality() {
-        for (ItemWrapper item : wrappedItems)
+        for (ItemDecorator item : wrappedItems)
             item.updateQuality();
     }
 }

@@ -1,7 +1,10 @@
 package com.gildedrose;
 
 import com.gildedrose.decorators.ItemDecorator;
-import com.gildedrose.itemtypes.*;
+import com.gildedrose.itemtypes.AgedBrie;
+import com.gildedrose.itemtypes.BackstagePasses;
+import com.gildedrose.itemtypes.LegendaryItem;
+import com.gildedrose.itemtypes.RegularItem;
 
 public class TexttestFixture {
 
@@ -9,7 +12,7 @@ public class TexttestFixture {
         StringBuilder builder = new StringBuilder();
         builder.append("OMGHAI!").append("\n");
 
-        ItemWrapper[] items = new ItemWrapper[]{
+        ItemDecorator[] items = new ItemDecorator[]{
                 new RegularItem(new Item("+5 Dexterity Vest", 10, 20)), //
                 new AgedBrie(new Item("Aged Brie", 2, 0)), //
                 new RegularItem(new Item("Elixir of the Mongoose", 5, 7)), //
